@@ -1,5 +1,5 @@
 import React from "react";
-import { SettingsScreen } from "../../features/settings/screens/settings.screen";
+import { PortfolioScreen } from "../../features/portfolio/screens/portfolio.screen";
 import {
   createStackNavigator,
   CardStyleInterpolators,
@@ -7,7 +7,7 @@ import {
 
 const SettingsStack = createStackNavigator();
 
-export const SettingsNavigator = ({ route, navigation }) => {
+export const PortfolioNavigator = ({ route, navigation }) => {
   return (
     <SettingsStack.Navigator
       headerMode="screen"
@@ -19,8 +19,8 @@ export const SettingsNavigator = ({ route, navigation }) => {
         options={{
           header: () => null,
         }}
-        name="Settings"
-        component={SettingsScreen}
+        name="Portfolio"
+        component={PortfolioScreen}
       />
     </SettingsStack.Navigator>
   );

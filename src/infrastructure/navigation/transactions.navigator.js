@@ -1,5 +1,5 @@
 import React from "react";
-import { SettingsScreen } from "../../features/settings/screens/settings.screen";
+import { TransactionsScreen } from "../../features/transactions/screens/transactions.screen";
 import {
   createStackNavigator,
   CardStyleInterpolators,
@@ -7,7 +7,7 @@ import {
 
 const SettingsStack = createStackNavigator();
 
-export const SettingsNavigator = ({ route, navigation }) => {
+export const TransActionsNavigator = ({ route, navigation }) => {
   return (
     <SettingsStack.Navigator
       headerMode="screen"
@@ -20,7 +20,7 @@ export const SettingsNavigator = ({ route, navigation }) => {
           header: () => null,
         }}
         name="Settings"
-        component={SettingsScreen}
+        component={TransactionsScreen}
       />
     </SettingsStack.Navigator>
   );

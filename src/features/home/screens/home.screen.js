@@ -1,8 +1,15 @@
 import React, { useState, useContext } from "react";
-import { Spacer } from "../../../components/spacer/spacer.component";
+import { Text } from "react-native";
+
+import { SafeArea } from "../../../components/utility/safe-area.component"
+
+import { Balance, HomeBackground, BalanceText, BalanceProcent } from "../components/home.styles";
 
 export const HomeScreen = ({ navigation }) => {
   return (
-    <Text>Hello world</Text>
+    <SafeArea>
+      <HomeBackground>
+      </HomeBackground>
+    </SafeArea>
   );
 };
