@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { FlatList, StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 import { SafeArea } from "../../../components/utility/safe-area.component"
 import { ListItem } from "../components/listItem"
 
-import { Balance, HomeBackground, BalanceText, BalanceProcent } from "../components/home.styles";
+import { HomeBackground } from "../components/home.styles";
 
 import { MarketDataContext } from "../../../services/coin/coin.context";
 import { colors } from "../../../infrastructure/theme/colors";
@@ -18,7 +18,7 @@ const ListHeader = () => (
   </>
 )
 
-export const HomeScreen = ({ navigation }) => {
+export const MarketScreen = () => {
   const { data } = useContext(MarketDataContext);
 
   return (
