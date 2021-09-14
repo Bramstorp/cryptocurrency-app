@@ -4,5 +4,5 @@ import { Text } from "../../../components/typography/text.component";
 
 export const HomeBackground = styled.View`
   flex: 1;
-  background-color: 'rgb(255, 255, 255)';
+  background-color: 'rgb(20,20,20)';
 `;

@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { colors } from '../../../infrastructure/theme/colors';
 
 export const ListItem = ({ name, symbol, currentPrice, priceChangePercentage7d, logoUrl, onPress }) => {
   const priceChangeColor = priceChangePercentage7d > 0 ? '#34C759' : '#FF3B30';
@@ -7,8 +8,6 @@ export const ListItem = ({ name, symbol, currentPrice, priceChangePercentage7d, 
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.itemWrapper}>
-        
-        {/* Left side */}
         <View style={styles.leftWrapper}>
           <Image source={{ uri: logoUrl }} style={styles.image} />
           <View style={styles.titlesWrapper}>
@@ -16,9 +15,6 @@ export const ListItem = ({ name, symbol, currentPrice, priceChangePercentage7d, 
             <Text style={styles.subtitle}>{symbol.toUpperCase()}</Text>
           </View>
         </View>
-
-        
-        {/* Right side */}
         <View style={styles.rightWrapper}>
           <Text style={styles.title}>${currentPrice.toLocaleString('en-US', { currency: 'USD' })}</Text>
           <Text style={[styles.subtitle, {color: priceChangeColor}]}>{priceChangePercentage7d.toFixed(2)}%</Text>
@@ -50,11 +46,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
+    color: colors.text.secondary,
   },
   subtitle: {
     marginTop: 4,
     fontSize: 14,
-    color: "#A9ABB1",
+    color: colors.text.primary,
   },
   rightWrapper: {
     alignItems: 'flex-end',

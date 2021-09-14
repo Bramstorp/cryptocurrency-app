@@ -1,28 +1,18 @@
 export const colors = {
   brand: {
-    primary: "orange",
-    secondary: "#5D6CC6",
-    muted: "grey",
+    primary: "#BB86FC",
+    secondary: "#09DAC6",
   },
   ui: {
-    primary: "#262626",
-    secondary: "#757575",
-    tertiary: "#F1F1F1",
-    quaternary: "#FFFFFF",
-    disabled: "#DEDEDE",
-    error: "#D0421B",
-    success: "#138000",
+    primary: "#121212",
+    error: "#CF6679",
   },
   bg: {
-    primary: "#FFFFFF",
-    secondary: "#F1F1F1",
+    primary: "#121212",
+    secondary: "#1D1D1D",
   },
   text: {
-    primary: "#262626",
-    secondary: "#757575",
-    disabled: "#9C9C9C",
-    inverse: "#FFFFFF",
-    error: "#D0421B",
-    success: "#138000",
+    primary: "#B6B6B6",
+    secondary: "#FFFFFF",
   },
 };

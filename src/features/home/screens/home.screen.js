@@ -7,6 +7,7 @@ import { ListItem } from "../components/listItem"
 import { Balance, HomeBackground, BalanceText, BalanceProcent } from "../components/home.styles";
 
 import { MarketDataContext } from "../../../services/coin/coin.context";
+import { colors } from "../../../infrastructure/theme/colors";
 
 const ListHeader = () => (
   <>
@@ -46,7 +47,6 @@ export const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
   },
   titleWrapper: {
     marginTop: 20,
@@ -55,10 +55,11 @@ const styles = StyleSheet.create({
   largeTitle: {
     fontSize: 24,
     fontWeight: "bold",
+    color: colors.text.secondary,
   },
   divider: {
     height: StyleSheet.hairlineWidth,
-    backgroundColor: '#A9ABB1',
+    backgroundColor: colors.text.primary,
     marginHorizontal: 16,
     marginTop: 16,
   },
