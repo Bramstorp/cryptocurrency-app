@@ -38,16 +38,16 @@ export const CryptoLogo = styled.Image`
 `;
 
 export const CryptoWrapper = styled.View`
-    padding-horizontal: 16;
-    margin-top: 24;
+    padding-horizontal: 16px;
+    margin-top: 24px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 `;
 
 export const CryptoSubWrapper = styled.View`
-    padding-horizontal: 16;
-    margin-top: 10;
+    padding-horizontal: 16px;
+    margin-top: 10px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -77,6 +77,6 @@ export const ChartLineWrapper = styled.View`
 `;
 
 export const ChartTitle = styled(ChartYLabel)`
-    font-size: 24;
+    font-size: 24px;
     font-weight: bold;
 `;

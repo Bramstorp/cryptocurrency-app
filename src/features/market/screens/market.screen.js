@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 import { SafeArea } from "../../../components/utility/safe-area.component"
-import { ListItem } from "../components/listItem"
+import { ListItem } from "../components/list-item.component"
 
 import { HomeBackground } from "../components/home.styles";
 
