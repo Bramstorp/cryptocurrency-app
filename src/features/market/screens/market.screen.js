@@ -18,7 +18,7 @@ const ListHeader = () => (
   </>
 )
 
-export const MarketScreen = () => {
+export const MarketScreen = ({ navigation }) => {
   const { data } = useContext(MarketDataContext);
 
   return (
@@ -34,7 +34,9 @@ export const MarketScreen = () => {
             currentPrice={item.current_price}
             priceChangePercentage7d={item.price_change_percentage_7d_in_currency}
             logoUrl={item.image}
-            onPress={() => openModal(item)}
+            onPress={() => navigation.navigate("MarketDetails", {
+              currentCoin: item
+            })}
           />
         )}
         ListHeaderComponent={<ListHeader />}
