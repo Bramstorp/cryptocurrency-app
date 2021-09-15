@@ -1,7 +1,6 @@
 import styled from "styled-components/native";
-import { Image } from "react-native-paper";
-import { Text } from "../../../components/typography/text.component";
 import { colors } from "../../../infrastructure/theme/colors";
+import { ChartYLabel } from '@rainbow-me/animated-charts';
 
 export const CryptoTitle = styled.Text`
     color: ${colors.text.secondary};
@@ -62,4 +61,22 @@ export const LeftWrapper = styled.View`
 
 export const RightWrapper = styled.View`
     align-items: flex-end;
+`;
+
+export const ChartWrapper = styled.View`
+    margin-vertical: 16px;
+`;
+
+export const ChartTitleWrapper = styled.View`
+    margin-horizontal: 16px;
+    align-items: center;
+`;
+
+export const ChartLineWrapper = styled.View`
+    margin-top: 40px
+`;
+
+export const ChartTitle = styled(ChartYLabel)`
+    font-size: 24;
+    font-weight: bold;
 `;
