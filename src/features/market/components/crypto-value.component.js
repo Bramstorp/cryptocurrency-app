@@ -22,10 +22,9 @@ import {
   PriceChangePercentage,
   CryptoSubWrapper,
   ChartWrapper,
-  ChartTitleWrapper,
   ChartTitle,
   ChartLineWrapper,
-} from "../components/market-details.styles";
+} from "./crypto-value.styles";
 
 import { Ionicons } from "@expo/vector-icons";
 
