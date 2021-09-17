@@ -1,6 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import { colors } from '../../../infrastructure/theme/colors';
+import { TouchableOpacity } from 'react-native'
 
 import { Wrapper, LeftWrapper, Image, LeftTitle, Title, SubTitle, RightWrapper } from "./list-item.style"
 
