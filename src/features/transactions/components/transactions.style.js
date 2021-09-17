@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { TextInput, Button } from "react-native";
+import Icon from 'react-native-vector-icons/Feather';
 import { colors } from "../../../infrastructure/theme/colors";
 import { TouchableOpacity } from 'react-native';
 
@@ -20,6 +20,15 @@ export const AvailableBalance = styled.Text`
     top: 10%; 
 `;
 
+export const AmountText = styled.Text`
+    text-align: center;
+    color: #fff;
+    font-size: 35; 
+    font-weight: bold;
+    position: absolute;
+    top: 20%;
+`
+
 export const SendBtn = styled(TouchableOpacity)`
     width: 90%;
     border-radius: 10;
@@ -34,4 +43,34 @@ export const SendBtnText = styled.Text`
     text-align: center;
     font-weight: 400;
     font-size: 20;
-`
+`;
+
+export const NumberWrap = styled.View`
+    width: 100%;
+    position: absolute; 
+    bottom: 50;
+`;
+
+export const FlexRow = styled.View`
+    flex-direction: row;
+    width: 100%;
+    padding-horizontal: 12%;
+`;
+
+export const NumberBtn = styled(TouchableOpacity)`
+    width: 34%;
+    margin-horizontal: 10; 
+    margin-vertical: 15;
+`;
+
+export const NumberText = styled.Text`
+    color: rgb(255, 255, 255);
+    font-size: 35;
+    font-weight: 400;
+`;
+
+export const IconBtn = styled(Icon)`
+    font-size: 30;
+    position: relative; 
+    top: 10;
+`;
