@@ -34,20 +34,18 @@ export const TransactionsScreen = ({ navigation }) => {
   }
 
   const deleteLastChar = () => {
-    setAmount({ amount: amount.substring(0, amount.length - 1) });
+    setAmount(amount.substring(0, amount.length - 1));
   }
 
-  const setCurrenyAmount = (amount) => {
-    setAmount({ amount: amount.toString() + amount  });
+  const setCurrenyAmount = (addAmount) => {
+    setAmount(amount.toString() + addAmount);
   }
 
-  const putPoint = () => {
-    console.log(amount.includes('.'));
-    
+  const putPoint = () => {    
     if (amount.includes('.')) {
       
     } else {
-      setAmount({ amount: amount.toString() + '.'  });
+      setAmount(amount.toString() + '.');
     }
   }
 
