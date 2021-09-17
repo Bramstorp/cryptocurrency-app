@@ -1,59 +1,29 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { colors } from '../../../infrastructure/theme/colors';
+
+import { Wrapper, LeftWrapper, Image, LeftTitle, Title, SubTitle, RightWrapper } from "./list-item.style"
 
 export const ListItem = ({ name, symbol, currentPrice, priceChangePercentage7d, logoUrl, onPress }) => {
   const priceChangeColor = priceChangePercentage7d > 0 ? '#34C759' : '#FF3B30';
 
   return (
     <TouchableOpacity onPress={onPress}>
-      <View style={styles.itemWrapper}>
-        <View style={styles.leftWrapper}>
-          <Image source={{ uri: logoUrl }} style={styles.image} />
-          <View style={styles.titlesWrapper}>
-            <Text style={styles.title}>{ name}</Text>
-            <Text style={styles.subtitle}>{symbol.toUpperCase()}</Text>
-          </View>
-        </View>
-        <View style={styles.rightWrapper}>
-          <Text style={styles.title}>${currentPrice.toLocaleString('en-US', { currency: 'USD' })}</Text>
-          <Text style={[styles.subtitle, {color: priceChangeColor}]}>{priceChangePercentage7d.toFixed(2)}%</Text>
-        </View>
+      <Wrapper>
+        <LeftWrapper>
+          <Image source={{ uri: logoUrl }} />
+          <LeftTitle>
+            <Title>{ name }</Title>
+            <SubTitle>{symbol.toUpperCase()}</SubTitle>
+          </LeftTitle>
+        </LeftWrapper>
 
-      </View>
+        <RightWrapper>
+          <Title>${currentPrice.toLocaleString('en-US', { currency: 'USD' })}</Title>
+          <SubTitle style={{color: priceChangeColor}}>{priceChangePercentage7d.toFixed(2)}%</SubTitle>
+        </RightWrapper>
+
+      </Wrapper>
     </TouchableOpacity>
   )
 }
-
-const styles = StyleSheet.create({
-  itemWrapper: {
-    paddingHorizontal: 16,
-    marginTop: 24,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: 'center',
-  },
-  leftWrapper: {
-    flexDirection: "row",
-    alignItems: 'center',
-  },
-  image: {
-    height: 48,
-    width: 48,
-  },
-  titlesWrapper: {
-    marginLeft: 8,
-  },
-  title: {
-    fontSize: 18,
-    color: colors.text.secondary,
-  },
-  subtitle: {
-    marginTop: 4,
-    fontSize: 14,
-    color: colors.text.primary,
-  },
-  rightWrapper: {
-    alignItems: 'flex-end',
-  },
-})
