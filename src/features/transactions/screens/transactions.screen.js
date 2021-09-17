@@ -12,7 +12,7 @@ import Dialog from "react-native-dialog";
 
 export const TransactionsScreen = ({ navigation }) => {
   const [balance, setBalance] = useState(1000);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
   const [dialogVisible, setDialogVisible] = useState(false); 
   const [transactionLoader, setTransactionLoader] = useState(false);  
   const [receiver, setReceiver] = useState(undefined);
@@ -29,12 +29,26 @@ export const TransactionsScreen = ({ navigation }) => {
     setDialogVisible(false);
   };
 
-  const transferEth = () => {
+  const transfer = () => {
     console.log("TRANSFER")
   }
 
   const deleteLastChar = () => {
     setAmount({ amount: amount.substring(0, amount.length - 1) });
+  }
+
+  const setCurrenyAmount = (amount) => {
+    setAmount({ amount: amount.toString() + amount  });
+  }
+
+  const putPoint = () => {
+    console.log(amount.includes('.'));
+    
+    if (amount.includes('.')) {
+      
+    } else {
+      setAmount({ amount: amount.toString() + '.'  });
+    }
   }
 
   return (
@@ -53,46 +67,46 @@ export const TransactionsScreen = ({ navigation }) => {
 
     <View style={{ width: '100%', position: 'absolute', bottom: 50 }} >
       <View style={{ flexDirection: 'row', width: '100%', paddingHorizontal: '12%' }} >
-          <TouchableOpacity onPress={() => { setAmount('1') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
+          <TouchableOpacity onPress={() => { setCurrenyAmount('1') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
             <Text style={{ color: '#fff', fontSize: 35, fontWeight: '400' }} > 1 </Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => { setAmount('2') }} style={{ width: '32%', marginHorizontal: 10, marginVertical: 15 }} >
+          <TouchableOpacity onPress={() => { setCurrenyAmount('2') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
             <Text style={{ color: '#fff', fontSize: 35, fontWeight: '400' }} > 2 </Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => { setAmount('3') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
+          <TouchableOpacity onPress={() => { setCurrenyAmount('3') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
             <Text style={{ color: '#fff', fontSize: 35, fontWeight: '400' }} > 3 </Text>
           </TouchableOpacity>
         </View>
         
       <View style={{ flexDirection: 'row', width: '100%', paddingHorizontal: '12%' }} >
-        <TouchableOpacity onPress={() => { setAmount('4') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
+        <TouchableOpacity onPress={() => { setCurrenyAmount('4') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
           <Text style={{ color: '#fff', fontSize: 35, fontWeight: '400' }} > 4 </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { setAmount('5') }} style={{ width: '32%', marginHorizontal: 10, marginVertical: 15 }} >
+        <TouchableOpacity onPress={() => { setCurrenyAmount('5') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
           <Text style={{ color: '#fff', fontSize: 35, fontWeight: '400' }} > 5 </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { setAmount('6') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
+        <TouchableOpacity onPress={() => { setCurrenyAmount('6') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
           <Text style={{ color: '#fff', fontSize: 35, fontWeight: '400' }} > 6 </Text>
         </TouchableOpacity>
       </View>
 
       <View style={{ flexDirection: 'row', width: '100%', paddingHorizontal: '12%' }} >
-        <TouchableOpacity onPress={() => { setAmount('7') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
+        <TouchableOpacity onPress={() => { setCurrenyAmount('7') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
           <Text style={{ color: '#fff', fontSize: 35, fontWeight: '400' }} > 7 </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { setAmount('8') }} style={{ width: '32%', marginHorizontal: 10, marginVertical: 15 }} >
+        <TouchableOpacity onPress={() => { setCurrenyAmount('8') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
           <Text style={{ color: '#fff', fontSize: 35, fontWeight: '400' }} > 8 </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { setAmount('9') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
+        <TouchableOpacity onPress={() => { setCurrenyAmount('9') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
           <Text style={{ color: '#fff', fontSize: 35, fontWeight: '400' }} > 9 </Text>
         </TouchableOpacity>
       </View>
 
       <View style={{ flexDirection: 'row', width: '100%', paddingHorizontal: '12%' }} >
-        <TouchableOpacity onPress={() => {console.log("test")}} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
+        <TouchableOpacity onPress={() => { putPoint() }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
           <Text style={{ color: '#fff', fontSize: 35, fontWeight: '400' }} > . </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { setAmount('0') }} style={{ width: '32%', marginHorizontal: 10, marginVertical: 15 }} >
+        <TouchableOpacity onPress={() => { setCurrenyAmount('0') }} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
           <Text style={{ color: '#fff', fontSize: 35, fontWeight: '400' }} > 0 </Text>
         </TouchableOpacity>
         <TouchableOpacity  onPress={deleteLastChar} style={{ width: '34%', marginHorizontal: 10, marginVertical: 15 }} >
@@ -102,7 +116,7 @@ export const TransactionsScreen = ({ navigation }) => {
 
       <SendBtn 
           onPress={showDialog}>
-        <SendBtnText> Send ETH </SendBtnText>
+        <SendBtnText>Send ETH</SendBtnText>
       </SendBtn>
     </View>
 
@@ -112,7 +126,7 @@ export const TransactionsScreen = ({ navigation }) => {
         Enter the recipient's Ethereum address below.
       </Dialog.Description>
       <Dialog.Input onChangeText={(x) => setReceiver(x)} />
-      <Dialog.Button label="Send" onPress={transferEth}/>
+      <Dialog.Button label="Send" onPress={transfer}/>
       <Dialog.Button label="Cancel" onPress={handleCancel} />
     </Dialog.Container>
 
