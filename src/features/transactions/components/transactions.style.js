@@ -1,31 +1,37 @@
 import styled from "styled-components/native";
-import { TextInput } from "react-native";
+import { TextInput, Button } from "react-native";
 import { colors } from "../../../infrastructure/theme/colors";
+import { TouchableOpacity } from 'react-native';
 
-export const TitleWrapper = styled.View`
-    margin-top: 20;
-    padding-horizontal: 16;
+export const Container = styled.View`
+    flex: 1;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(20, 20, 20);
 `;
 
-export const Title = styled.Text`
-    font-size: 24;
-    font-weight: bold;
-    color: ${colors.text.secondary};
-    padding-bottom: 50;
+export const AvailableBalance = styled.Text`
+    text-align: center; 
+    color: ${colors.brand.primary}; 
+    font-size: 20;
+    position: absolute;
+    top: 10%; 
 `;
 
-export const Count = styled.Text`
-    padding-top: 50;
-    padding-bottom: 20;
-    font-size: 24;
-    font-weight: bold;
-    color: ${colors.text.secondary};
-    text-align: center
+export const SendBtn = styled(TouchableOpacity)`
+    width: 90%;
+    border-radius: 10;
+    background-color: rgb(30, 30, 30);
+    padding: 16px;
+    align-self: center;
+    margin-top: 10;
 `;
 
-export const InputValue = styled(TextInput)`
-  align-self: center;
-  width: 300px;
-  height: 40px;
-  background-color: white;
-`;
+export const SendBtnText = styled.Text`
+    color: ${colors.brand.primary};
+    text-align: center;
+    font-weight: 400;
+    font-size: 20;
+`
