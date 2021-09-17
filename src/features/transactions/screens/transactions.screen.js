@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { colors } from "../../../infrastructure/theme/colors";
 
-import { SafeArea } from "../../../components/utility/safe-area.component";
-
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 import { Container, AvailableBalance, SendBtn, SendBtnText } from "../components/transactions.style"
 
 import Icon from 'react-native-vector-icons/Feather';
-import Dialog from "react-native-dialog";
 
 export const TransactionsScreen = ({ navigation }) => {
   const [balance, setBalance] = useState("1000");
