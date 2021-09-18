@@ -39,3 +39,28 @@ hvis man vil se dokumentation omkring react native kan det bliver fundet her [**
 [r-docs]: https://reactjs.org/docs/getting-started.html
 [repo-website]: https://github.com/facebook/react-native-website
 
+### Mappe Struktur
+
+under her kan man se et high-level over filer og mapper i appen selv.
+
+```
+cryptocurrency-app/
+├── assets/
+│   ├── adaptive-icon.png
+│   └── ...
+└── src/
+    ├── components/
+    │   ├── animations/
+    │   │   └── fade.animation.js
+    │   ├── spacer/
+    │   │   └── spacer.component.js
+    │   ├── typography/
+    │   │   └── text.component.js
+    │   └── utility/
+    │   │   └── safe-area.component.js
+    ├── features/
+    ├── infrastructure/
+    ├── services/
+
+```
+
