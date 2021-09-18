@@ -61,13 +61,9 @@ cryptocurrency-app/
     ├── features/
     ├── infrastructure/
     │   ├── navigation
-    │   │   ├── account.navigator.js
     │   │   ├── app.navigator.js
     │   │   ├── index.js
     │   │   ├── market.navigator.js
-    │   │   ├── portfolio.navigator.js
-    │   │   ├── market.navigator.js
-    │   │   ├── settings.navigator.js
     │   │   └── transactions.navigator.js
     │   └── theme
     │       ├── colors.js
