@@ -1,9 +1,10 @@
 ## indholdsfortegnelse
 
-- [Requirements](#-requirements)
+- [Opsætningskrav](#-opsætningskrav)
+- [Dokumentation](#-dokumentation)
 
 
-## Requirements
+## Opsætningskrav
 
 - Node js
 
@@ -14,7 +15,7 @@
 - Yarn
 
 
-## 📖 Documentation
+## Dokumentation
 
 React Native hjemmeside docs [website][docs].
 
