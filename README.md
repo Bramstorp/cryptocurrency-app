@@ -2,7 +2,7 @@
 
 - [Opsæting](#-opsæting)
 - [Dokumentation](#-dokumentation)
-- [Mappe Struktur](#-Mappe-Struktur)
+- [Mappe Struktur](#-Mappe Struktur)
 
 ## Opsæting
 
@@ -27,7 +27,7 @@
 1.  `open http://localhost:19002/` til at åben expo siden lokalt, efter det går under tunnel også scan den med QR koden på din telefon for at åbne appen.
 
 
-### Dokumentation
+## Dokumentation
 
 React Native hjemmeside docs [website][docs].
 
@@ -39,7 +39,7 @@ hvis man vil se dokumentation omkring react native kan det bliver fundet her [**
 [r-docs]: https://reactjs.org/docs/getting-started.html
 [repo-website]: https://github.com/facebook/react-native-website
 
-### Mappe Struktur
+## Mappe Struktur
 
 under her kan man se et high-level over filer og mapper i appen selv.
 
