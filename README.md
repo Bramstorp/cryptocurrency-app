@@ -24,6 +24,8 @@
 
 1.  `cd cryptocurrency-app` til at komme ind i root af projektet.
 1.  `yarn start` eller `expo start` til at opsætte appen af expo live server 
+1.  `open http://localhost:19002/` til at åben expo siden lokalt, efter det går under tunnel også scan den med QR koden på din telefon for at åbne appen.
+
 
 ## Dokumentation
 
