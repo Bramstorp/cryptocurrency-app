@@ -27,7 +27,7 @@
 1.  `open http://localhost:19002/` til at åben expo siden lokalt, efter det går under tunnel også scan den med QR koden på din telefon for at åbne appen.
 
 
-## Dokumentation
+### Dokumentation
 
 React Native hjemmeside docs [website][docs].
 
