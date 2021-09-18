@@ -2,7 +2,7 @@
 
 - [Opsæting](#-opsæting)
 - [Dokumentation](#-dokumentation)
-- [Mappe Struktur](#-Mappe Struktur)
+- [Mappe Struktur](#-mappe-struktur)
 
 ## Opsæting
 
