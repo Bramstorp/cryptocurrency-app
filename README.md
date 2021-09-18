@@ -59,6 +59,23 @@ cryptocurrency-app/
     │   └── utility/
     │       └── safe-area.component.js
     ├── features/
+    │   ├── market
+    │   │   ├── components
+    │   │   │   ├── crypto-value.component.js
+    │   │   │   ├── crypto-value.styles.js
+    │   │   │   ├── list-header.component.js
+    │   │   │   ├── list-header.style.js
+    │   │   │   ├── list-item.component.js
+    │   │   │   ├── list-item.style.js
+    │   │   │   └── market.style.js
+    │   │   └── creens
+    │   │       ├── market-detail.screen.js
+    │   │       └── market.screen.js
+    │   └── transactions
+    │       ├── components
+    │       │   └── transactions.style.js
+    │       └── creens
+    │           └──transactions.screen.js
     ├── infrastructure/
     │   ├── navigation
     │   │   ├── app.navigator.js
@@ -77,4 +94,10 @@ cryptocurrency-app/
             └── coin.js
 
 ```
-
+crypto-value.component.js
+crypto-value.styles.js
+list-header.component.js
+list-header.style.js
+list-item.component.js
+list-item.style.js
+market.style.js
