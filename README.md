@@ -1,19 +1,26 @@
 ## indholdsfortegnelse
 
-- [Opsætningskrav](#-opsætningskrav)
+- [Opsæting](#-opsæting)
 - [Dokumentation](#-dokumentation)
 
 
-## Opsætningskrav
+## Opsæting
 
-- Node js
+### Opsætningskrav
 
-- iOS 11.0 and Android 5.0 (API 21) or newer
+1.  [Git](https://git-scm.com/downloads).
+1.  [Node](https://nodejs.org/en/download/) _(version 12 or greater)_.
+1.  [Yarn](https://yarnpkg.com/lang/en/docs/install/) _(version 1.5 or greater)_.
 
-- Expo
+### Installtion og opsætning af packages
 
-- Yarn
+1.  `cd cryptocurrency-app` til at komme ind i root af projektet.
+1.  `yarn` til at installer pakker / dependencies.
 
+### Kører projektet lokalt 
+
+1.  `cd cryptocurrency-app` til at komme ind i root af projektet.
+1.  `yarn start` eller `expo start` til at opsætte appen af expo live server 
 
 ## Dokumentation
 
