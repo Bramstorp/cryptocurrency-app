@@ -2,7 +2,7 @@
 
 - [Opsæting](#-opsæting)
 - [Dokumentation](#-dokumentation)
-
+- [Mappe Struktur](#-Mappe-Struktur)
 
 ## Opsæting
 
@@ -94,10 +94,3 @@ cryptocurrency-app/
             └── coin.js
 
 ```
-crypto-value.component.js
-crypto-value.styles.js
-list-header.component.js
-list-header.style.js
-list-item.component.js
-list-item.style.js
-market.style.js
