@@ -11,6 +11,9 @@
 1.  [Git](https://git-scm.com/downloads).
 1.  [Node](https://nodejs.org/en/download/) _(version 12 or greater)_.
 1.  [Yarn](https://yarnpkg.com/lang/en/docs/install/) _(version 1.5 or greater)_.
+1.  [Expo](https://docs.expo.dev/get-started/installation/)
+1.  [Expo app ios](https://apps.apple.com/us/app/expo-go/id982107779)
+1.  [Expo app android](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=da&gl=US)
 
 ### Installtion og opsætning af packages
 
