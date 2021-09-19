@@ -1,8 +1,8 @@
 ## indholdsfortegnelse
 
-- [Opsæting](#-opsæting)
-- [Dokumentation](#-dokumentation)
-- [Mappe Struktur](#-mappe-struktur)
+- [Opsæting](#opsæting)
+- [Dokumentation](#dokumentation)
+- [Mappe Struktur](#mappe-struktur)
 
 ## Opsæting
 
