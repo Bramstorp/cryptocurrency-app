@@ -100,10 +100,10 @@ cryptocurrency-app/
 ## App funktion
 - Market skærm med crypto værdiere ud fra api
 - Crypto detalje skærm med graf
-- fuld kustom tema
-- appe navigation
-- transaktion skærm
-- transaktion med pung og tilføjese ETH værdiere 
+- Fuld custom tema
+- App navigation
+- Transaktion skærm
+- Transaktion med pung og tilføjese ETH værdiere
 
 
 
