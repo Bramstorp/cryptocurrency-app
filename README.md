@@ -3,6 +3,8 @@
 - [Opsæting](#opsæting)
 - [Dokumentation](#dokumentation)
 - [Mappe Struktur](#mappe-struktur)
+- [App funktion](#app-funktion)
+
 
 ## Opsæting
 
