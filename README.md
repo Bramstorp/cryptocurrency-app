@@ -94,3 +94,10 @@ cryptocurrency-app/
             └── coin.js
 
 ```
+
+## App funktion
+- Market skærm med crypto værdiere ud fra api
+- Crypto detalje skærm med graf
+
+
+
