@@ -5,23 +5,25 @@ import {
   CardStyleInterpolators,
 } from "@react-navigation/stack";
 
-const SettingsStack = createStackNavigator();
+// stack for denne navigation
+const TransActionsStack = createStackNavigator();
 
+// transaction skærm navigation 
 export const TransActionsNavigator = ({ route, navigation }) => {
   return (
-    <SettingsStack.Navigator
+    <TransActionsStack.Navigator
       headerMode="screen"
       screenOptions={{
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}
     >
-      <SettingsStack.Screen
+      <TransActionsStack.Screen
         options={{
           header: () => null,
         }}
         name="Settings"
         component={TransactionsScreen}
       />
-    </SettingsStack.Navigator>
+    </TransActionsStack.Navigator>
   );
 };

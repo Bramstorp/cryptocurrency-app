@@ -2,6 +2,7 @@ import styled from "styled-components/native";
 import { colors } from "../../../infrastructure/theme/colors";
 import { ChartYLabel } from '@rainbow-me/animated-charts';
 
+// under her er alt styling til crypto værdiere i crypto value component
 export const CryptoTitle = styled.Text`
     color: ${colors.text.secondary};
     padding-left: 10px;

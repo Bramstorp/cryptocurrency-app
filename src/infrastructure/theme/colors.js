@@ -1,3 +1,5 @@
+
+// gloablen tema farver i vores app
 export const colors = {
   brand: {
     primary: "#BB86FC",

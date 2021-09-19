@@ -1,5 +1,8 @@
 import styled from "styled-components/native";
 
+// text component
+
+// sætter en default text styling
 const defaultTextStyles = (theme) => `
   font-family: ${theme.fonts.body};
   font-weight: ${theme.fontWeights.regular};
@@ -32,6 +35,7 @@ const label = (theme) => `
     font-weight: ${theme.fontWeights.medium};
 `;
 
+// varianter af text
 const variants = {
   body,
   label,
@@ -40,11 +44,13 @@ const variants = {
   hint,
 };
 
+// styling af text ud fra valgt over
 export const Text = styled.Text`
   ${({ theme }) => defaultTextStyles(theme)}
   ${({ variant, theme }) => variants[variant](theme)}
 `;
 
+// deafult props hvis variant ikke blive sat
 Text.defaultProps = {
   variant: "body",
 };

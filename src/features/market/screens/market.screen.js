@@ -9,8 +9,9 @@ import { MarketDataContext } from "../../../services/coin/coin.context";
 
 import { Container } from "../components/market.style"
 
-
+// Market skærm
 export const MarketScreen = ({ navigation }) => {
+  // global data
   const { data } = useContext(MarketDataContext);
 
   return (

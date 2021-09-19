@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import { colors } from "../../../infrastructure/theme/colors";
 
+// under her er alt styling til list item til list item componentet
 export const Wrapper = styled.View`
     padding-horizontal: 16;
     margin-top: 24;

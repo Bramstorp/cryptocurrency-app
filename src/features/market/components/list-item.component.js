@@ -3,6 +3,7 @@ import { TouchableOpacity } from 'react-native'
 
 import { Wrapper, LeftWrapper, Image, LeftTitle, Title, SubTitle, RightWrapper } from "./list-item.style"
 
+// component til vært list item
 export const ListItem = ({ name, symbol, currentPrice, priceChangePercentage7d, logoUrl, onPress }) => {
   const priceChangeColor = priceChangePercentage7d > 0 ? '#34C759' : '#FF3B30';
 

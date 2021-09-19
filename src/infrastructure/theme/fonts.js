@@ -1,3 +1,5 @@
+
+// gloablen font med størrelse, font og vægt
 export const fonts = {
   body: "Oswald_400Regular",
   heading: "Lato_400Regular",

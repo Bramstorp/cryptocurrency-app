@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import { colors } from "../../../infrastructure/theme/colors";
 import { TouchableOpacity } from 'react-native';
 
+// under her er alt styling til vores transaction skærm
 export const Container = styled.View`
     flex: 1;
     width: 100%;

@@ -1,23 +1,28 @@
-import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
+import React from "react";                                                    // react pakke
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";     // navigation for bunden
+import { Ionicons } from "@expo/vector-icons";                                // expo app ikoner
 
-import { MarketNavigator } from "./market.navigator";
-import { TransActionsNavigator } from "./transactions.navigator"
+import { MarketNavigator } from "./market.navigator";                         // market navigation
+import { TransActionsNavigator } from "./transactions.navigator"              // transactions navigation
 
-import { colors } from "../../infrastructure/theme/colors";
+import { colors } from "../../infrastructure/theme/colors";                   // farve tema
 
-import { MarketDataContextProvider } from "../../services/coin/coin.context";
+import { MarketDataContextProvider } from "../../services/coin/coin.context"; // global context så alle vores componenter kan henter coin data
 
+// tab til bund navigation
 const Tab = createBottomTabNavigator();
 
+// tab ikonere
 const TAB_ICON = {
   Market: "md-bar-chart",
   Transactions: "md-swap-vertical-sharp"
 };
 
+// oprettelse af bund ikoner
 const createScreenOptions = ({ route }) => {
+  // henter alle navigation navnen
   const iconName = TAB_ICON[route.name];
+  // opretter et ikon for vær route/navigation i vores app
   return {
     tabBarIcon: ({ size, color }) => (
       <Ionicons name={iconName} size={size} color={color} />
@@ -25,6 +30,7 @@ const createScreenOptions = ({ route }) => {
   };
 };
 
+// app navigation
 export const AppNavigator = () => (
   <MarketDataContextProvider>
       <Tab.Navigator

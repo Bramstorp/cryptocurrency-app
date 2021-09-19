@@ -28,17 +28,22 @@ import {
 
 import { Ionicons } from "@expo/vector-icons";
 
+// component crypto værdier + graf
 export const CryptoValue = ({ currentCoin }) => {
+  // sætter latestCurrentPrice til en shared værdi fra current price fra props værdi
   const latestCurrentPrice = useSharedValue(currentCoin.current_price);
   const [chartReady, setChartReady] = useState(false);
 
+  // ændre farver ud værider er negativ eller positiv
   const priceChangeColor =
     currentCoin.price_change_percentage_7d_in_currency > 0
       ? "#34C759"
       : "#FF3B30";
   const priceChange = currentCoin.price_change_percentage_7d_in_currency > 0;
 
+  // kør når appen blive kørt
   useEffect(() => {
+    // sæter latestCurrentPrice værdien til props currentCoin current price
     latestCurrentPrice.value = currentCoin.current_price;
 
     setTimeout(() => {
@@ -46,6 +51,7 @@ export const CryptoValue = ({ currentCoin }) => {
     }, 0);
   }, [currentCoin.current_price]);
 
+  // formatering af USD valuta
   const formatUSD = (value) => {
     "worklet";
     if (value === "") {
@@ -56,12 +62,14 @@ export const CryptoValue = ({ currentCoin }) => {
       return formattedValue;
     }
 
+    // formater værdi
     const formattedValue = `$${parseFloat(value)
       .toFixed(2)
       .replace(/\d(?=(\d{3})+\.)/g, "$&,")}`;
     return formattedValue;
   };
 
+  // hvis sparkenline ikke er blevet sat
   if (currentCoin?.sparkline_in_7d.price.length === 0) {
     return <Text>Loading...</Text>;
   }
