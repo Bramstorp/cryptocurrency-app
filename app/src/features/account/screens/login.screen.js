@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { ActivityIndicator, Colors } from "react-native-paper";
+import axios from 'axios';
 
 import { Text } from "react-native";
 
@@ -21,6 +22,19 @@ export const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
 
   const isLoading = false;
+
+  const test = () => {
+    axios.post('http://2803-185-93-84-251.ngrok.io/users', {
+      username: "string5",
+      password_hash: "string5"
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
 
   return (
     <AccountBackground>
@@ -50,7 +64,7 @@ export const LoginScreen = ({ navigation }) => {
             <AuthButton
               icon="lock-open-outline"
               mode="contained"
-              onPress={() => console.log(email, password)}
+              onPress={() => test()}
             >
               Login
             </AuthButton>
