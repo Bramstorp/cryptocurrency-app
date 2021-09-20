@@ -4,6 +4,7 @@ import { Ionicons } from "@expo/vector-icons";                                //
 
 import { MarketNavigator } from "./market.navigator";                         // market navigation
 import { TransActionsNavigator } from "./transactions.navigator"              // transactions navigation
+import { SettingsNavigator }  from "./settings.navigator";
 
 import { colors } from "../../infrastructure/theme/colors";                   // farve tema
 
@@ -15,7 +16,8 @@ const Tab = createBottomTabNavigator();
 // tab ikonere
 const TAB_ICON = {
   Market: "md-bar-chart",
-  Transactions: "md-swap-vertical-sharp"
+  Transactions: "md-swap-vertical-sharp",
+  Settings: "md-settings",
 };
 
 // oprettelse af bund ikoner
@@ -44,6 +46,7 @@ export const AppNavigator = () => (
       >
         <Tab.Screen name="Market" component={MarketNavigator} />
         <Tab.Screen name="Transactions" component={TransActionsNavigator} />
+        <Tab.Screen name="Settings" component={SettingsNavigator} />
       </Tab.Navigator>
     </MarketDataContextProvider>
 );
