@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext, useCallback, useState } from "react";
 import styled from "styled-components/native";
 
 import { List, Avatar } from "react-native-paper";
-import { Text } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
+
+import { AuthContext } from "../../../services/auth/auth.context";
 
 const SettingsItem = styled(List.Item)`
   padding: ${(props) => props.theme.space[3]};
@@ -20,12 +24,39 @@ const UsernameText = styled.Text`
 
 
 export const SettingsScreen = ({ navigation }) => {
+  const { onLogout, user } = useContext(AuthContext);
+  const [photo, setPhoto] = useState(null);
+
+  const getProfilePicture = async (currentUser) => {
+    const photoUri = await AsyncStorage.getItem(`${currentUser}-photo`);
+    setPhoto(photoUri);
+  };
+
+  useFocusEffect(
+    useCallback(() => {
+      getProfilePicture(user);
+    }, [user])
+  );
+
+  console.log(user)
+
   return (
     <SafeArea>
       <AvatarContainer>
-        <Avatar.Icon size={180} icon="human" backgroundColor="#2182BD" />
+      <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
+          {!photo && (
+            <Avatar.Icon size={180} icon="human" backgroundColor="#2182BD" />
+          )}
+          {photo && (
+            <Avatar.Image
+              size={180}
+              source={{ uri: photo }}
+              backgroundColor="#2182BD"
+            />
+          )}
+        </TouchableOpacity>
         <Spacer position="top" size="large">
-          <UsernameText variant="label">USERNAME</UsernameText>
+          <UsernameText variant="label">{user}</UsernameText>
         </Spacer>
       </AvatarContainer>
       <List.Section>
@@ -33,7 +64,7 @@ export const SettingsScreen = ({ navigation }) => {
           titleStyle={{color:"white"}}
           title="Logout"
           left={(props) => <List.Icon {...props} color="white" icon="door" />}
-          onPress={console.log("LOGOUT")}
+          onPress={() => onLogout()}
         />
       </List.Section>
     </SafeArea>

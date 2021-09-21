@@ -19,7 +19,7 @@ export const AuthContextProvider = ({ children }) => {
         password_hash: password
     })
     .then(function (response) {
-        setUser(response);
+        setUser(username);
         setIsLoading(false);
     })
     .catch(function (error) {
@@ -29,31 +29,41 @@ export const AuthContextProvider = ({ children }) => {
 
     };
 
+    const onLogout = () => {
+      setUser(null)
+    };
+
     const onLogin = (username, password) => {
-        setIsLoading(true);
-        axios.post('http://fdc2-185-93-84-251.ngrok.io/token', {
-            username: username,
-            password_hash: password
-        })
+      setIsLoading(true);
+      
+      const params = new URLSearchParams()
+      params.append('username', username)
+      params.append('password', password)
+
+      const config = {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      }
+      
+      axios.post("http://fdc2-185-93-84-251.ngrok.io/token", params, config)
         .then(function (response) {
-            console.log(response)
-            setUser(response);
-            setIsLoading(false);
+          setUser(username);
+          setIsLoading(false);
         })
         .catch(function (error) {
             setIsLoading(false);
             setError(error.toString());
         });
     };
-
-
-    
+  
   return (
     <AuthContext.Provider
       value={{
         isAuthenticated: !!user,
         onRegister,
         onLogin,
+        onLogout,
         user,
         error,
         isLoading

@@ -13,10 +13,14 @@ import {
 } from "../components/account.styles";
 import { Spacer } from "../../../components/spacer/spacer.component";
 
+import { AuthContext } from "../../../services/auth/auth.context";
+
+
 export const RegisterScreen = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [repeatedPassword, setRepeatedPassword] = useState("");
+  const { onRegister } = useContext(AuthContext);
 
   const isLoading = false;
 
@@ -56,7 +60,7 @@ export const RegisterScreen = ({ navigation }) => {
             <AuthButton
               icon="email"
               mode="contained"
-              onPress={() => console.log(email, password, repeatedPassword)}
+              onPress={() => onRegister(username, password, repeatedPassword)}
             >
               Register
             </AuthButton>

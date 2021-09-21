@@ -1,5 +1,7 @@
 import React from "react";
 import { SettingsScreen } from "../../features/settings/screens/settings.screen";
+import { CameraScreen } from "../../features/settings/screens/camera.screen";
+
 import {
   createStackNavigator,
   CardStyleInterpolators,
@@ -22,6 +24,7 @@ export const SettingsNavigator = ({ route, navigation }) => {
         name="Settings"
         component={SettingsScreen}
       />
+       <SettingsStack.Screen name="Camera" component={CameraScreen} />
     </SettingsStack.Navigator>
   );
 };
