@@ -38,8 +38,6 @@ export const SettingsScreen = ({ navigation }) => {
     }, [user])
   );
 
-  console.log(user)
-
   return (
     <SafeArea>
       <AvatarContainer>

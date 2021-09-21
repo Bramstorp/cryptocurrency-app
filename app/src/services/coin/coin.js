@@ -53,6 +53,5 @@ export const getMarketData = async () => {
     return formattedResponse;
   } catch (error) {
     // hvis den fanger en fejl så skriv den ud in consollen
-    console.log(error.message);
   }
 }
