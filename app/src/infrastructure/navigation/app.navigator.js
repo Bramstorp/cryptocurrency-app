@@ -34,19 +34,19 @@ const createScreenOptions = ({ route }) => {
 
 // app navigation
 export const AppNavigator = () => (
-  <MarketDataContextProvider>
-      <Tab.Navigator
-        screenOptions={createScreenOptions}
-        tabBarOptions={{
-          style: {
-            backgroundColor: colors.bg.primary,
-          },
-          activeTintColor: colors.brand.primary,
-        }}
-      >
-        <Tab.Screen name="Market" component={MarketNavigator} />
-        <Tab.Screen name="Transactions" component={TransActionsNavigator} />
-        <Tab.Screen name="Settings" component={SettingsNavigator} />
-      </Tab.Navigator>
-    </MarketDataContextProvider>
+    <MarketDataContextProvider>
+        <Tab.Navigator
+          screenOptions={createScreenOptions}
+          tabBarOptions={{
+            style: {
+              backgroundColor: colors.bg.primary,
+            },
+            activeTintColor: colors.brand.primary,
+          }}
+        >
+          <Tab.Screen name="Market" component={MarketNavigator} />
+          <Tab.Screen name="Transactions" component={TransActionsNavigator} />
+          <Tab.Screen name="Settings" component={SettingsNavigator} />
+        </Tab.Navigator>
+      </MarketDataContextProvider>
 );

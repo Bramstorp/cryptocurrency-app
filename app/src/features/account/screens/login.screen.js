@@ -1,9 +1,5 @@
 import React, { useState, useContext } from "react";
 import { ActivityIndicator, Colors } from "react-native-paper";
-import axios from 'axios';
-
-import { Text } from "react-native";
-
 
 import {
   AccountBackground,
@@ -17,24 +13,14 @@ import {
 
 import { Spacer } from "../../../components/spacer/spacer.component";
 
+import { AuthContext } from "../../../services/auth/auth.context";
+
+
 export const LoginScreen = ({ navigation }) => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const { onLogin, error, isLoading } = useContext(AuthContext);
 
-  const isLoading = false;
-
-  const test = () => {
-    axios.post('http://2803-185-93-84-251.ngrok.io/users', {
-      username: "string5",
-      password_hash: "string5"
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
 
   return (
     <AccountBackground>
@@ -42,12 +28,10 @@ export const LoginScreen = ({ navigation }) => {
       <Title>Crypto App</Title>
       <AccountContainer>
         <AuthInput
-          label="E-mail"
-          value={email}
-          textContentType="emailAddress"
-          keyboardType="email-address"
+          label="Username"
+          value={username}
           autoCapitalize="none"
-          onChangeText={(u) => setEmail(u)}
+          onChangeText={(u) => setUsername(u)}
         />
         <ErrorContainer size="large">
           <AuthInput
@@ -64,7 +48,7 @@ export const LoginScreen = ({ navigation }) => {
             <AuthButton
               icon="lock-open-outline"
               mode="contained"
-              onPress={() => test()}
+              onPress={() => onLogin(username, password)}
             >
               Login
             </AuthButton>

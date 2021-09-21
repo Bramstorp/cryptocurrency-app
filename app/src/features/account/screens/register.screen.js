@@ -14,7 +14,7 @@ import {
 import { Spacer } from "../../../components/spacer/spacer.component";
 
 export const RegisterScreen = ({ navigation }) => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [repeatedPassword, setRepeatedPassword] = useState("");
 
@@ -26,12 +26,10 @@ export const RegisterScreen = ({ navigation }) => {
       <Title>Crypto App</Title>
       <AccountContainer>
         <AuthInput
-          label="E-mail"
-          value={email}
-          textContentType="emailAddress"
-          keyboardType="email-address"
+          label="Username"
+          value={username}
           autoCapitalize="none"
-          onChangeText={(u) => setEmail(u)}
+          onChangeText={(u) => setUsername(u)}
         />
         <Spacer size="large">
           <AuthInput
