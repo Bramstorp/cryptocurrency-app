@@ -14,8 +14,6 @@ export const MarketScreen = ({ navigation }) => {
   // global data
   const { data } = useContext(MarketDataContext);
 
-  console.log(data)
-
   return (
     <SafeArea>
       <Container>

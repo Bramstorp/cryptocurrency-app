@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Ionicons } from "@expo/vector-icons";                                // expo app ikoner
-import { TouchableOpacity, Linking, Button } from 'react-native'
+import { TouchableOpacity, Linking, Button, View } from 'react-native'
 
 import { Spacer } from "../../../components/spacer/spacer.component"
 
 import { CryptoValue } from "../components/crypto-value.component"
 import { colors } from "../../../infrastructure/theme/colors";
+
+import { OpenCoinView, CoinBtn } from "../components/market.style"
 
 // Market detaljer skærm 
 export const MarketDetailScreen = ({ route, navigation }) => {
@@ -22,7 +24,11 @@ export const MarketDetailScreen = ({ route, navigation }) => {
       </Spacer>
       <CryptoValue currentCoin={currentCoin} />
       <Spacer size="large">
-        <Button title="Open Coin" onPress={ ()=>{ Linking.openURL(`https://coinmarketcap.com/currencies/${currentCoin.name}`)}} />
+        <OpenCoinView>
+         <CoinBtn title="Open Coin" onPress={ ()=>{ Linking.openURL(`https://coinmarketcap.com/currencies/${currentCoin.name}`)}}>
+           Open Coin information
+         </CoinBtn>
+        </OpenCoinView>
       </Spacer>
     </SafeArea>
   );
