@@ -12,6 +12,7 @@ import {
 } from "../components/account.styles";
 
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { Text } from "../../../components/typography/text.component";
 
 import { AuthContext } from "../../../services/auth/auth.context";
 
@@ -33,7 +34,8 @@ export const LoginScreen = ({ navigation }) => {
           autoCapitalize="none"
           onChangeText={(u) => setUsername(u)}
         />
-        <ErrorContainer size="large">
+                <Spacer size="large">
+
           <AuthInput
             label="Password"
             value={password}
@@ -42,7 +44,13 @@ export const LoginScreen = ({ navigation }) => {
             autoCapitalize="none"
             onChangeText={(p) => setPassword(p)}
           />
-        </ErrorContainer>
+                  </Spacer>
+
+                  {error && (
+          <ErrorContainer size="large">
+            <Text variant="error">{error}</Text>
+          </ErrorContainer>
+        )}
         <Spacer size="large">
           {!isLoading ? (
             <AuthButton
