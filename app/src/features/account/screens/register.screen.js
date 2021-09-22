@@ -12,6 +12,7 @@ import {
   Title,
 } from "../components/account.styles";
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { Text } from "../../../components/typography/text.component";
 
 import { AuthContext } from "../../../services/auth/auth.context";
 
@@ -20,9 +21,7 @@ export const RegisterScreen = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [repeatedPassword, setRepeatedPassword] = useState("");
-  const { onRegister } = useContext(AuthContext);
-
-  const isLoading = false;
+  const { onRegister, isLoading, error } = useContext(AuthContext);
 
   return (
     <AccountBackground>
@@ -55,6 +54,11 @@ export const RegisterScreen = ({ navigation }) => {
             onChangeText={(p) => setRepeatedPassword(p)}
           />
         </Spacer>
+        {error && (
+          <ErrorContainer size="large">
+            <Text variant="error">{error}</Text>
+          </ErrorContainer>
+        )}
         <Spacer size="large">
           {!isLoading ? (
             <AuthButton
